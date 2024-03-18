@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Golos Text", sans-serif;
+  font-style: normal;
+  max-width: 1056px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(217, 221, 228, 1);
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 100px 80px;
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  top: 50%;
+}
+
+.wrapper-icons {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+}
+
+.wrapper-icon {
+}
+
+.wrapper-icon img {
+  max-width: 26px;
+  width: 100%;
+  height: 20px;
+  transform: rotate(0deg);
+}
+
+.wrapper-accordeon {
+  width: 100%;
+  padding: 32px 0;
+  border-top: 1px solid rgba(217, 221, 228, 1);
+  border-bottom: 1px solid rgba(217, 221, 228, 1);
+  position: relative;
+}
+
+.wrapper-accordeon__head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper-accordeon__head-title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.wrapper-accordeon__head-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: rgba(51, 179, 178, 1);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.wrapper-accordeon__head-icon img {
+  width: 16px;
+  height: 16px;
+  transform: rotate(-180deg);
+  transition: transform 0.5s ease;
+}
+
+.wrapper-accordeon:not(.active) .wrapper-accordeon__head-icon img {
+  transform: rotate(0deg);
+}
+
+.wrapper-accordeon__body {
+  display: grid;
+  grid-template-columns: repeat(3, 277px);
+  column-gap: 32px;
+  margin-top: 32px;
+  max-height: 0;
+  transition: max-height 1s ease;
+  overflow: hidden;
+}
+
+.wrapper-accordeon__body-tr {
+  display: flex;
+  flex-direction: column;
+  row-gap: 33px;
+}
+
+.wrapper-accordeon__body-td {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.wrapper-accordeon__body-td__paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: rgba(145, 151, 163, 1);
+}
+
+.wrapper-accordeon__body-td__info {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
