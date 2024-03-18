@@ -1,16 +1,29 @@
-const btnsToggle = document.querySelectorAll(".wrapper-accordeon__head-icon");
+const accordeons = document.querySelectorAll(".wrapper-accordeon");
 
-btnsToggle.forEach((el, i) => {
-  el.addEventListener("click", (e) => {
-    let currentBox = e.target.closest(".wrapper-accordeon");
-    let currentContent = document.querySelectorAll(".wrapper-accordeon__body");
-    currentBox.classList.toggle("active");
-    if (currentBox.classList.contains("active")) {
-      currentContent[i].style.maxHeight = currentContent[i].scrollHeight + "px";
-      currentContent[i].style.willChange = "max-height";
-    } else {
-      currentContent[i].style.maxHeight = 0;
-      currentContent[i].style.willChange = "auto";
-    }
+function updateContent(el, content) {
+  if (el.classList.contains("active")) {
+    content.style.maxHeight = content.scrollHeight + "px";
+    content.style.willChange = "max-height";
+  } else {
+    content.style.maxHeight = "0";
+    content.style.willChange = "auto";
+  }
+}
+
+accordeons.forEach((el) => {
+  const btnToggle = el.querySelector(".wrapper-accordeon__head-icon");
+  const content = el.querySelector(".wrapper-accordeon__body");
+
+  btnToggle.addEventListener("click", () => {
+    el.classList.toggle("active");
+    updateContent(el, content);
+  });
+});
+
+window.addEventListener("resize", () => {
+  accordeons.forEach((el, i) => {
+    const content = el.querySelector(".wrapper-accordeon__body");
+
+    updateContent(el, content);
   });
 });

@@ -34,9 +34,6 @@ body {
   column-gap: 12px;
 }
 
-.wrapper-icon {
-}
-
 .wrapper-icon img {
   max-width: 26px;
   width: 100%;
@@ -96,6 +93,12 @@ body {
   max-height: 0;
   transition: max-height 1s ease;
   overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper-accordeon__body {
+    grid-template-columns: 1fr;
+  }
 }
 
 .wrapper-accordeon__body-tr {
