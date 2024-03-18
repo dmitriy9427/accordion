@@ -7,9 +7,10 @@ btnsToggle.forEach((el, i) => {
     currentBox.classList.toggle("active");
     if (currentBox.classList.contains("active")) {
       currentContent[i].style.maxHeight = currentContent[i].scrollHeight + "px";
-      console.log(currentContent[i], i);
+      currentContent[i].style.willChange = "max-height";
     } else {
       currentContent[i].style.maxHeight = 0;
+      currentContent[i].style.willChange = "auto";
     }
   });
 });

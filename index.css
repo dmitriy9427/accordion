@@ -92,6 +92,7 @@ body {
   grid-template-columns: repeat(3, 277px);
   column-gap: 32px;
   margin-top: 32px;
+  will-change: max-height;
   max-height: 0;
   transition: max-height 1s ease;
   overflow: hidden;
@@ -100,13 +101,6 @@ body {
 .wrapper-accordeon__body-tr {
   display: flex;
   flex-direction: column;
-  row-gap: 33px;
-}
-
-.wrapper-accordeon__body-td {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
 }
 
 .wrapper-accordeon__body-td__paragraph {
@@ -114,10 +108,15 @@ body {
   font-weight: 400;
   line-height: 22px;
   color: rgba(145, 151, 163, 1);
+  margin-bottom: 8px;
 }
 
 .wrapper-accordeon__body-td__info {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+}
+
+.wrapper-accordeon__body-td__info:not(:last-child) {
+  margin-bottom: 33px;
 }
